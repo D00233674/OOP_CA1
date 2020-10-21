@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.io.File;
 
 public class JCResults {
-    public static void main(String[] args) throws IOException {
+    public static void mai(String[] arngs) throws IOException {
 
         Scanner sc = new Scanner(new File("students_jc_results.txt"));
         sc.useDelimiter("[,\r\n]+");
