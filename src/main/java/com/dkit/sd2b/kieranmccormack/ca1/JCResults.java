@@ -11,7 +11,7 @@ public class JCResults {
         Scanner sc = new Scanner(new File("students_jc_results.txt"));
         sc.useDelimiter("[,\r\n]+");
 
-        //store studentNumber
+        //store studentNumber to print later
         int studentNumber = 0;
 
         double average;
