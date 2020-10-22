@@ -35,6 +35,7 @@ public class JCResults {
 
 //            System.out.println(Arrays.toString(selectFiveGrades(codes, grades)));
             System.out.println(studentNumber + "\t\t\t" + average);
+            //format with dedicated spaces instead of tabs
         }
 
         //Print StudentNumber   Average
@@ -62,33 +63,37 @@ public class JCResults {
 
         //going on the fact that there isnt any duplicate codes
         //ie: student cant have two results for maths
-        int highest = codes[0];
-        int secondHighest = codes[1];
+        int highest = -1; //cant use codes - cant use 0 - grades cant be negative???
+        int secondHighest = -2; //negatives work
+        int j = 0; //in turn should fill first 3 spaces in array with irish, english or math grades
         for(int i = 0; i < codes.length; i++){
             if(codes[i] == IRISHCODE || codes[i] == ENGLISHCODE || codes[i] == MATHSCODE){
-                selectedGrades[i] = grades[i];
+                selectedGrades[j] = grades[i];
+                j++;
             } else if(codes[i] == CSPECODE){
                 //do nothing
             } else {
-                if(i == 0){
-                    if(grades[i] > grades[i+1]){
-                        highest = grades[i];
-                        secondHighest = grades[i+1];
-                    } else { //duplicates????
-                        highest = grades[i+1];
-                        secondHighest = grades[i];
-                    }
-                } else {
+                //not needed as the previous initial values are not important codes
+//                if(i == 0){ //re trace as assignments have changed
+//                    if(grades[i] > grades[i+1]){
+//                        highest = grades[i];
+//                        secondHighest = grades[i+1];
+//                    } else { //duplicates????
+//                        highest = grades[i+1];
+//                        secondHighest = grades[i];
+//                    }
+//                } else {
                     if(grades[i] > highest){
                         secondHighest = highest;
                         highest = grades[i];
                     } else if(grades[i] > secondHighest){
                         secondHighest = grades[i];
                     }
-                }
+//                }
             }
         }
-        //add highest and secondHighest into the array - needs to be more efficient - fills all spaces in the first loop
+        System.out.println(Arrays.toString(selectedGrades));
+        //add highest and secondHighest into the array - needs to be more efficient
         boolean highestInputted = false;
         for(int i = 0; i < selectedGrades.length; i++){
             if(selectedGrades[i] == 0 && !highestInputted){
@@ -104,7 +109,7 @@ public class JCResults {
 //            }
 //        }
 
-        //System.out.println(Arrays.toString(selectedGrades));
+        System.out.println(Arrays.toString(selectedGrades));
 
         return selectedGrades;
     }
