@@ -64,7 +64,8 @@ public class JCResults
 
             sc.close();
 
-        } catch (FileNotFoundException e)
+        }
+        catch (FileNotFoundException e)
         {
             System.out.println("File does not exist!");
         }
@@ -93,17 +94,20 @@ public class JCResults
                 selectedGrades[j] = grades[i];
                 j++;
             //if the code is CSPE do nothing
-            } else if (codes[i] == CSPECODE)
+            }
+            else if (codes[i] == CSPECODE)
             {
                 //do nothing
-            } else
+            }
+            else
             {
                 //in any other case work out the highest and second highest grades
                 if (grades[i] > highest)
                 {
                     secondHighest = highest;
                     highest = grades[i];
-                } else if (grades[i] > secondHighest)
+                }
+                else if (grades[i] > secondHighest)
                 {
                     secondHighest = grades[i];
                 }
@@ -118,7 +122,8 @@ public class JCResults
             {
                 selectedGrades[i] = highest;
                 highestInputted = true;
-            } else if (selectedGrades[i] == 0 && highestInputted)
+            }
+            else if (selectedGrades[i] == 0 && highestInputted)
             {
                 selectedGrades[i] = secondHighest;
             }
