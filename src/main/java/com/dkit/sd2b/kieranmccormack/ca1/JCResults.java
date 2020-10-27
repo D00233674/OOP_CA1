@@ -22,7 +22,7 @@ public class JCResults
         Scanner sc = null;
         try
         {
-            sc = new Scanner(new File("students_jc_results2.txt"));
+            sc = new Scanner(new File("students_jc_results.txt"));
             //delimiter used to tell scanner when it reaches the end of a value
             sc.useDelimiter("[,\r\n]+");
 
